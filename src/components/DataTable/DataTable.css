@@ -1,0 +1,26 @@
+.DataTable__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.DataTable__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+.DataTable__row:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.DataTable__row__item {
+  display: flex;
+  align-items: center;
+}
