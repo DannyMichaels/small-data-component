@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   overflow: hidden;
 }
@@ -23,4 +23,5 @@
 .DataTable__row__item {
   display: flex;
   align-items: center;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }

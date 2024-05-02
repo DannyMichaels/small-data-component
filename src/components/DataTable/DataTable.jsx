@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import './DataTable.css';
 import { eodLatestMock } from '../../mocks/eodLatest.mock';
+import { getEodLatest } from '../../services/marketstackApi';
 
 export default function DataTable() {
-  const itemsJSX = eodLatestMock.data.map((entry) => {
-    const { open, close, symbol, date } = entry;
+  useEffect(() => {
+    getEodLatest('AAPL,MSFT').then((data) => {
+      console.log(data);
+    });
+  }, []);
+
+  const itemsJSX = eodLatestMock.data.map((entry, idx) => {
+    const { open, close, symbol, date, volume } = entry;
     const currentValue = close; // Assuming 'close' is the current (realtime) value
     const openingValue = open;
     const indicator =
@@ -20,7 +27,7 @@ export default function DataTable() {
       );
 
     return (
-      <div key={date} className="DataTable__row">
+      <div key={idx} className="DataTable__row">
         <div className="DataTable__row__item">{symbol}</div>
         {/* <div className="DataTable__row__item">{date}</div> */}
         <div className="DataTable__row__item">
@@ -28,7 +35,7 @@ export default function DataTable() {
           {currentValue}&nbsp;&nbsp;
           {arrowIcon}
         </div>
-        {/* <div>{arrowIcon}</div> */}
+        <div>{volume.toLocaleString()}</div>
       </div>
     );
   });
