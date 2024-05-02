@@ -9,10 +9,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  /* background: none transparent; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,6 +19,7 @@
 
 body {
   margin: 0;
+  background: #282c34;
   min-height: 100vh;
   flex-grow: 1;
 }
@@ -32,7 +31,4 @@ body {
   align-items: center;
   width: 100%;
   flex-grow: 1;
-  /* max-width: 800px; */
-  /* margin: 0 auto; */
-  /* padding: 20px; */
 }
