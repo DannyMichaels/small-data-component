@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const marketstackApiKey = import.meta.env.VITE_APP_MARKETWATCH_API_KEY;
+export const marketstackApiKey = process.env.NEXT_APP_MARKETWATCH_API_KEY;
 
 export const marketstackApi = axios.create({
   baseURL: 'http://api.marketstack.com/v1/',

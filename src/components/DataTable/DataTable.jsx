@@ -1,15 +1,20 @@
+'use client';
+
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import './DataTable.css';
 import { eodLatestMock } from '../../mocks/eodLatest.mock';
-import { getEodLatest } from '../../services/marketstackApi';
 
 export default function DataTable() {
   useEffect(() => {
-    getEodLatest('AAPL,MSFT').then((data) => {
-      console.log(data);
-    });
+    // axios
+    //   .get('/api/marketstack/eod-latest?symbols=AAPL,MSFT')
+    //   .then((response) => {
+    //     const data = response.data.data;
+    //     console.log(data);
+    //   });
   }, []);
 
   const itemsJSX = eodLatestMock.data.map((entry, idx) => {
