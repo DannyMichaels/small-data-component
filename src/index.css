@@ -19,7 +19,7 @@
 
 body {
   margin: 0;
-  /* background: #282c34; */
+  background: #282c34;
   min-height: 100vh;
   flex-grow: 1;
 }
