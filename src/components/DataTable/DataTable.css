@@ -26,3 +26,8 @@
   align-items: center;
   font-family: Helvetica Neue, Arial, sans-serif;
 }
+
+.DataTable__row__item.symbol {
+  min-width: 50px;
+  max-width: 50px;
+}

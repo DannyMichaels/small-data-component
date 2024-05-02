@@ -8,14 +8,23 @@ import './DataTable.css';
 import { eodLatestMock } from '../../mocks/eodLatest.mock';
 
 export default function DataTable() {
+  const [data, setData] = React.useState(eodLatestMock);
+  const [isLoading, setIsLoading] = React.useState(true);
+
   useEffect(() => {
     // axios
-    //   .get('/api/marketstack/eod-latest?symbols=AAPL,MSFT')
+    //   .get('/api/marketstack/eod-latest')
+    //   // .get('/api/marketstack/eod-latest?symbols=AAPL,MSFT')
     //   .then((response) => {
     //     const data = response.data.data;
-    //     console.log(data);
+    //     setData(data);
+    //     setIsLoading(false);
     //   });
   }, []);
+
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
   const itemsJSX = eodLatestMock.data.map((entry, idx) => {
     const { open, close, symbol, date, volume } = entry;
@@ -33,7 +42,7 @@ export default function DataTable() {
 
     return (
       <div key={idx} className="DataTable__row">
-        <div className="DataTable__row__item">{symbol}</div>
+        <div className="DataTable__row__item symbol">{symbol}</div>
         {/* <div className="DataTable__row__item">{date}</div> */}
         <div className="DataTable__row__item">
           {indicator === 'Positive' ? '+' : '-'}

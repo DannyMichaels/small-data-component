@@ -19,3 +19,9 @@ export const getEodLatest = async (symbols) => {
   const response = await marketstackApi.get(`${url}&symbols=${symbols}`);
   return response.data;
 };
+
+export const getTickers = async () => {
+  const url = createUrl('tickers');
+  const response = await marketstackApi.get(url);
+  return response.data;
+};
